@@ -1,0 +1,70 @@
+<div class="hero-wrap" >
+
+    <div class="overlay">
+        <article class="clock">
+            <div class="hours-container">
+                <div class="hours"></div>
+            </div>
+            <div class="minutes-container">
+                <div class="minutes"></div>
+            </div>
+            <div class="seconds-container">
+                <div class="seconds"></div>
+            </div>
+        </article>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="images/adiwatt_logo.png" alt="" id="lmnp">
+                <img src="images/logo-light.png" alt="" id="logofooter">
+            </div>
+            <div class="col">
+                <h1 id="title1">Centrale photovoltaïque</h1>
+
+                <div>
+                    <div id="m-booked-bl-simple-week-vertical-7492"></div>
+                    <div id="menu">
+                        <div  id="divR1">
+                            <span id="spR1">Rendement journalier</span>
+                        </div>
+                        <div  id="divR2">
+                            <img src="images/solar-panel.png" alt="" id="imgR1" />
+                            <span  id="spR2" >kWh</span>
+                        </div>
+                        <br>
+                        <div id="divR3" >
+                            <span id="spR3">Rendement mensuel</span>
+                        </div>
+                        <div  id="divR4" >
+                            <img src="images/solar-panel.png" alt="" id="imgR4" />
+                            <span id="spR4">kwh</span>
+                        </div>
+                        <br>
+                        <div id ="divR5" >
+                            <span id="spR5">CO<SUB>2</SUB> - évité</span>
+                        </div>
+                        <div  id="divR6" >
+                            <img src="images/co2.png" alt="" id="imgR6" />
+                            <span id="spR6" >t</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section" id="footer1212">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p> Copyright &copy; <?php echo date('Y'); ?> All rights reserved designed by SolarPlay® </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+

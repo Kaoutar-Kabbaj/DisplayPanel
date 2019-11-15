@@ -1,0 +1,96 @@
+div.clockd {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+div.clockd a {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+div.clockd.small a {
+}
+
+div.clockd.medium a {
+}
+
+div.clockd.large a {
+}
+
+div.clockd a:hover {
+    text-decoration: underline;
+}
+
+div.clockd div.date {
+    color: #777;
+    margin: 0 0 10px 0;
+}
+
+div.clockd.small div.date {
+    font-size: 1.0em;
+}
+
+div.clockd.medium div.date {
+    font-size: 1.25em;
+}
+
+div.clockd.large div.date {
+    font-size: 1.5em;
+}
+
+div.clockd div.time {
+    font-weight: 200;
+}
+
+div.clockd.small div.time {
+    font-size: 1.5em;
+}
+
+div.clockd.medium div.time {
+    font-size: 2.25em;
+}
+
+div.clockd.large div.time {
+    font-size: 5em;
+}
+
+div.clockd div.time span {
+    border-radius: 5px;
+    padding: 1px 4px 3px 4px;
+    color: #fff; /* fallback */
+    background: #000; /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555), to(#000)); /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #555, #000); /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #555, #000); /* IE 10 */
+    background: -ms-linear-gradient(top, #555, #000); /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #555, #000);
+}
+
+div.clockd div.time span:nth-child(3) {
+    color: #333; /* fallback */
+    background: #ddd; /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#ccc)); /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #eee, #ccc); /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #eee, #ccc); /* IE 10 */
+    background: -ms-linear-gradient(top, #eee, #ccc); /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #eee, #ccc);
+}
+
+div.clockd div.time strong {
+    color: #666;
+    font-weight: 100;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+div.clockd.small div.time strong {
+}
+
+div.clockd.medium div.time strong {
+}
+
+div.clockd.large div.time strong {
+}

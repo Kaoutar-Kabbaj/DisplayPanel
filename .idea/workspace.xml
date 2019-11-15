@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5e2bb40c-7787-4255-8111-ca8140fdc179" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1SWg7XWBAL0Hf7r8rpso9I9iIzs" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/jquery" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\adiwatt\vendor\jquery" />
+      <recent name="C:\xampp\htdocs\adiwatt\vendor" />
+      <recent name="C:\xampp\htdocs\adiwatt\css" />
+      <recent name="C:\xampp\htdocs\adiwatt\fonts" />
+      <recent name="C:\xampp\htdocs\adiwatt\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\adiwatt\css" />
+      <recent name="C:\xampp\htdocs\adiwatt\css\" />
+      <recent name="C:\xampp\htdocs\adiwatt\css\css" />
+      <recent name="C:\xampp\htdocs\adiwatt\js" />
+      <recent name="C:\xampp\htdocs\adiwatt\vendor" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e2bb40c-7787-4255-8111-ca8140fdc179" name="Default Changelist" comment="" />
+      <created>1571684600209</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571684600209</updated>
+      <workItem from="1571684611674" duration="6964000" />
+      <workItem from="1571733439487" duration="18272000" />
+      <workItem from="1571824248696" duration="77562000" />
+      <workItem from="1572535307491" duration="1541000" />
+      <workItem from="1572600036687" duration="21222000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/espace.php</url>
+          <line>304</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/panneau.php</url>
+          <line>218</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/demo1.js</url>
+          <line>141</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/panneau.php</url>
+          <line>177</line>
+          <properties>
+            <option name="className" value="" />
+            <option name="methodName" value="\find_indice_row" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/panneau.php</url>
+          <line>137</line>
+          <properties>
+            <option name="className" value="" />
+            <option name="methodName" value="\get_file_name" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
