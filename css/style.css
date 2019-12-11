@@ -2,16 +2,25 @@
   background-image: url('../images/solar.jpg');
   /* background-position: center; */
   /* background-repeat: repeat; */
+
   background-size: cover;
 }
 
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
-  div#col1{
+  div#col1 {
     padding: 48%;
   }
 
-  footer#footer1212{
+  div#col_side {
+    display: none;
+
+  }
+div#m-booked-bl-simple-week-vertical-7492{margin-left: 10%;
+  display: block;
+  position: absolute;
+  margin-top: 19%;}
+  footer#footer1212 {
     margin-top: 176%;
     box-sizing: content-box;
     font-family: "Work Sans", Arial, sans-serif;
@@ -37,41 +46,49 @@
     margin-left: 54%;
   }
 
-  img#lmnp{
+  img#lmnp {
     width: 43%;
     /* height: auto; */
     margin-top: 31%;
     /* margin-left: -1055%; */
   }
 
-  div#menu{
+  div#menu {
     margin-top: 54%;
     margin-left: 4%;
     margin-right: 5%;
   }
 
 
-  div#divR1
-  {
+  div#divR1 {
     font-weight: bold;
     border-style: none;
     color: black;
     background: white;
-    font-size: 147%;}
+    font-size: 147%;
+  }
 
-  span#spR1{
+  span#spR1 {
     margin-left: 5%;
   }
-  div#divR2{
-    padding: 8%;font-weight: bold; color: black; border-style: solid; border-color: white; background-color: #2125297d;
+
+  div#divR2 {
+    padding: 8%;
+    font-weight: bold;
+    color: black;
+    border-style: solid;
+    border-color: white;
+    background-color: #2125297d;
   }
 
-  span#spR2{
+  span#spR2 {
     margin-left: 45%;
     color: #f8b81d;
-    font-size: 307%; font-family: 'DS-Digital', arial;
+    font-size: 307%;
+    font-family: 'DS-Digital', arial;
   }
-  div#divR3{
+
+  div#divR3 {
     font-weight: bold;
     border-style: none;
     color: black;
@@ -79,37 +96,47 @@
     font-size: 147%;
 
   }
-  span#spR3{
+
+  span#spR3 {
     margin-left: 5%;
   }
-  div#divR4{
-    padding:8%;
+
+  div#divR4 {
+    padding: 8%;
     color: black;
     border-style: solid;
     border-color: white;
     background-color: #2125297d;
   }
-  span#spR4{
+
+  span#spR4 {
     margin-left: 45%;
     color: #f8b81d;
-    font-size: 307%; font-family: 'DS-Digital', arial;
+    font-size: 307%;
+    font-family: 'DS-Digital', arial;
   }
 
-  div#divR5{
-    border-style: none;color: black;background: white;font-size: 147%;
+  div#divR5 {
+    border-style: none;
+    color: black;
+    background: white;
+    font-size: 147%;
 
   }
-  span#spR5{
+
+  span#spR5 {
     font-weight: bold;
     margin-left: 5%;
   }
-  div#divR6{
+
+  div#divR6 {
     color: black;
     border-style: solid;
     border-color: white;
     background-color: #2125297d;
   }
-  span#spR6{
+
+  span#spR6 {
     color: #f8b81d;
     font-size: 307%;
     font-family: 'DS-Digital', arial;
@@ -118,24 +145,38 @@
 
   }
 
-  img#imgR6{
+  img#imgR6 {
     margin-left: 4%;
     margin-bottom: 4%;
     margin-top: 10%;
   }
-  img#imgR4{
+
+  img#imgR4 {
     margin-left: 4%;
     margin-bottom: -19%;
-    margin-top: 1%;"
+    margin-top: 1%;
+
 
   }
-  img#imgR1{
+
+  img#imgR1 {
     margin-left: 4%;
     margin-bottom: -20%;
     margin-top: 1%;
   }
 }
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  {  div#col_side{
+  display:none;
 
+}
+article#clock1{display:none;}
+div#m-booked-bl-simple-week-vertical-7492{    margin-top: -112%;
+  margin-left: 54%;}
+img
+
+}
 /* Tablet Styles */
 
 @media only screen and (min-width: 401px) and (max-width: 960px) {
@@ -144,79 +185,12 @@
     background-image: url('../images/solar.jpg');  max-width:100%;
   }*/
 
+  div#col_side{
+    display:none;
 
-  .clock {
-    border-radius: 84%;
-    background: rgba(0, 0, 0, 0.25) url(../images/ios_clock.svg) no-repeat center;
-    background-size: 75%;
-    height: 4em;
-    padding-bottom: 28%;
-    position: relative;
-    width: 18em;
-    position: absolute;
   }
-  .minutes-container, .hours-container, .seconds-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  .hours {
-    background: #000;
-    height: 20%;
-    left: 48.75%;
-    position: absolute;
-    top: 30%;
-    transform-origin: 50% 100%;
-    width: 2.5%;
-  }
-
-  .minutes {
-    background: #000;
-    height: 40%;
-    left: 49%;
-    position: absolute;
-    top: 10%;
-    transform-origin: 50% 100%;
-    width: 2%;
-  }
-
-
-  .seconds {
-    background: #000;
-    height: 45%;
-    left: 49.5%;
-    position: absolute;
-    top: 14%;
-    transform-origin: 50% 80%;
-    width: 1%;
-    z-index: 8;
-  }
-  @keyframes rotate {
-    100% {
-      transform: rotateZ(360deg);
-    }
-  }
-
-  .minutes-container {
-    animation: rotate 3600s infinite steps(60);
-  }
-  .seconds-container {
-    animation: rotate 60s infinite steps(60);
-  }
-  .clock.simple:after {
-    background: #000;
-    border-radius: 50%;
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 5%;
-    height: 5%;
-    z-index: 10;
-  }
+  article#clock1{display:none;}
+  div#m-booked-bl-simple-week-vertical-7492{display:none;}
 
   img#lmnp{
     width: 31%;
