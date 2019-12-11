@@ -8,6 +8,18 @@
 
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
+
+  p#copyright{
+    display: inline-block;
+    visibility: visible;
+    font-size: 16px;
+    background: #222831;
+    padding: 2em 0em;
+    margin-top: 450px;
+    margin-bottom: -3%;
+    bottom:0;
+    color: rgba(255, 255, 255, 0.7);
+  }
   div#col1 {
     padding: 48%;
   }
@@ -16,10 +28,10 @@
     display: none;
 
   }
-div#m-booked-bl-simple-week-vertical-7492{margin-left: 10%;
-  display: block;
-  position: absolute;
-  margin-top: 19%;}
+  div#m-booked-bl-simple-week-vertical-7492{margin-left: 10%;
+    display: block;
+    position: absolute;
+    margin-top: 19%;}
   footer#footer1212 {
     margin-top: 176%;
     box-sizing: content-box;
@@ -171,19 +183,64 @@ and (max-device-width : 1024px)  {  div#col_side{
   display:none;
 
 }
-article#clock1{display:none;}
-div#m-booked-bl-simple-week-vertical-7492{    margin-top: -112%;
-  margin-left: 54%;}
-img
+  article#clock1{display:none;}
+  div#m-booked-bl-simple-week-vertical-7492{    margin-top: -112%;
+    margin-left: 54%;}
+  img#footer_logo{
+
+
+
+
+  }
 
 }
 /* Tablet Styles */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+  p#copyright{
+    visibility: visible;
+    display: inline-block;
+    margin-bottom: -1%;
+    font-size: 16px;
+    background: #222831;
+    padding: 2em 13em;
+    margin-top: 450px;
+    bottom:0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  div#clock{
+    /* all:initial; */
+    margin-bottom: 34%;
+    /* margin-top: -39%; */!important;
+  }
+  img#logo_user{
+    margin-top: 5%;
+    margin-bottom:10%;
+
+  }
+  img#footer_logo{  margin-top: 10%;}
+  div#m-booked-bl-simple-week-vertical-7492{all:initial;    margin-top: -127%;
+    margin-left: 29%}
+}
+
 
 @media only screen and (min-width: 401px) and (max-width: 960px) {
 
   /*div#background_image{
     background-image: url('../images/solar.jpg');  max-width:100%;
   }*/
+
+
+  div#clock{
+
+    display:none;
+
+
+
+  }
+
 
   div#col_side{
     display:none;
@@ -331,6 +388,11 @@ img
   /*div#background_image{
     background-image: url('../images/solar.jpg');  max-width:100%;
   }*/
+
+  div[class='clockd large']{
+
+    margin-top:35%;
+  }
   footer {
     position: fixed;
     height: 100px;
@@ -480,9 +542,10 @@ img
 
 
   span#spR2{
-    margin-left: 54%;
+    margin-left: 49%;
     color: #f8b81d;
-    font-size: 307%; font-family: 'DS-Digital', arial;
+    font-size: 428%;
+    font-family: 'DS-Digital', arial;
   }
   div#divR3{
     width: 41%;
@@ -502,9 +565,10 @@ img
     background-color: #2125297d;
   }
   span#spR4{
-    margin-left: 54%;
+    margin-left: 49%;
     color: #f8b81d;
-    font-size: 307%; font-family: 'DS-Digital', arial;
+    font-size: 428%;
+    font-family: 'DS-Digital', arial;
   }
 
   div#divR5{
@@ -521,10 +585,10 @@ img
     background-color: #2125297d;
   }
   span#spR6{
-    margin-left: 54%;
+    margin-left: 49%;
     color: #f8b81d;
-    font-size: 307%;font-family: 'DS-Digital', arial;
-
+    font-size: 428%;
+    font-family: 'DS-Digital', arial;
   }
 
   img#imgR6{

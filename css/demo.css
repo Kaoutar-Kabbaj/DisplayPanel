@@ -465,6 +465,26 @@
     margin: 0 auto 40px;
 }
 
+.modal-content {
+    position: fixed;
+    top: auto;
+    right: auto;
+    left: auto;
+    /* bottom: 0; */
+    /* position: relative; */
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
 .txt-white {
     color: #FFFFFF;
 }

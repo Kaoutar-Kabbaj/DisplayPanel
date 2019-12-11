@@ -2,31 +2,30 @@
 include 'connection/db_connection_file.php';
 session_start();
 
-
-
 $dossier = 'upload_background/';
 $fichier = basename($_FILES['fileup']['name']);
+$id_user = $_SESSION["user_id"];
 $taille_maxi = 500000;
 $taille = filesize($_FILES['fileup']['tmp_name']);
 $extensions = array('.png', '.gif', '.jpg', '.jpeg');
 $extension = strrchr($_FILES['fileup']['name'], '.');
+//$image = getimagesize('upload_background/'.$fichier);
 
 $username=$_SESSION['username'] ;
-
-
 
 //Début des vérifications de sécurité...
 if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
 {
-    //$erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg ...';
+   //echo 'Vous devez uploader un fichier de type png, gif, jpg, jpeg ...';
     $erreur='1';
+
 }
 
 
 if($_FILES['fileup']['name']=='')
 {
     //No file selected
-    //$erreur='Veuillez sélectionner une image !' ;
+   //echo 'Veuillez sélectionner une image !' ;
     $erreur='2';
 }
 if($taille>$taille_maxi)
@@ -48,7 +47,7 @@ if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
         $conn = OpenCon();
 
         //echo "le fichier n existe pas";
-        $sql="UPDATE `user` SET `background_img_user`= '$fichier' WHERE `username` LIKE '$username' ";
+        $sql="UPDATE `user` SET `background_img_user`= '$fichier' WHERE `id_user` LIKE '$id_user' ";
         $result = $conn->query($sql);
         if ($result === TRUE) {
 

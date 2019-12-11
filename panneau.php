@@ -1,3 +1,14 @@
+
+<?php
+session_start();
+
+if ($_SESSION["loggedIn"] != true) {
+    header("Location: authentification.php");
+}
+$directory=$_SESSION["directory"] ;
+?>
+
+
 <html lang="en">
 <head>
     <title>SolarPlay</title>
@@ -23,9 +34,9 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="../adiwatt/css/demo.css" rel="stylesheet"/>
-    <link href="../adiwatt/css/clock.css" rel="stylesheet"/>
-    <link href="../adiwatt/css/light-bootstrap-dashboard2.css?v=2.0.0 " rel="stylesheet"/>
+    <link href="../<?= $directory ?>/css/demo.css" rel="stylesheet"/>
+    <link href="../<?= $directory ?>/css/clock.css" rel="stylesheet"/>
+    <link href="../<?= $directory ?>/css/light-bootstrap-dashboard2.css?v=2.0.0 " rel="stylesheet"/>
 
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript"> var _gaq = _gaq || [];
@@ -52,34 +63,60 @@
 
     <link rel="stylesheet" type="text/css" href="https://s.bookcdn.com/css/w/booked-wzs-widget-160x275.css?v=0.0.1">
     <link rel="stylesheet" type="text/css" href="https://s.bookcdn.com/css/w/booked-wzs-widget-160x275.css?v=0.0.1">
+
 </head>
 <body id="background_image" style="width: 100%;" data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
 
 <?php
-session_start();
+
 include 'connection/db_connection_file.php';
 $conn = OpenCon();
+$id_user = $_SESSION['user'] ;
 function get_data()
 {
 
     if (isset($_SESSION['username'])) {
         $conn = OpenCon();
         $username = $_SESSION['username'];
-        $sql = "SELECT *FROM user WHERE username like '$username'";
+        $id_user = $_SESSION['user'];
+        $affected_admin = $_SESSION['fk_admin'] ;
+
+
+
+        $sql = "SELECT *FROM user WHERE id_user like '$id_user'";
         $result = $conn->query($sql);
         while ($row = $result->fetch_assoc()) {
+
             $titre = $row['titre'];
             $meteo = $row['meteo'];
             $dossier = $row['dossier'];
             $type_clock = $row['type_clock'];
             $type_data_logger = $row['type_data_logger'];
             $logo_user = $row['logo_user'];
+            $background_img_user=$row['background_img_user'];
+            $CD=$row['CD'];
+            $city_id=$row['city_id'];
+            $solutions = $row['solutions'];
+        }
+
+        $sql = "SELECT * FROM user WHERE user_role ='3' and list_customers != ''";
+        $result = $conn->query($sql);
+        $tab = array();
+        while ($row = $result->fetch_assoc()) {
+            $id_installer = $row['id_user'];
+            $list_customer = json_decode($row['list_customers']);
+            if (in_array($id_user, $list_customer)) {
+                $tab = $row['list_customers'];
+                $id_researched = $id_installer;
+                $logo_admin = $row['logo_user'];
+            }
+            //$tab = array_merge($tab,$list_customer) ;
 
         }
 
 
     }
-    return array('titre' => $titre, 'meteo' => $meteo, 'dossier' => $dossier, 'type_clock' => $type_clock, 'type_data_logger' => $type_data_logger, 'logo_user' => $logo_user);
+    return array('titre' => $titre, 'meteo' => $meteo, 'dossier' => $dossier, 'type_clock' => $type_clock, 'type_data_logger' => $type_data_logger, 'logo_user' => $logo_user,'background_img_user'=>$background_img_user,'CD'=>$CD,'city_id'=>$city_id,'logo_admin'=> $logo_admin,'id_user'=>$id_user,'solutions'=>$solutions,'logo_admin'=> $logo_admin);
 
 }
 
@@ -106,13 +143,30 @@ echo "Huawei";
 
 
 $tab [] = get_data();
+
 $titre = $tab[0]['titre'];
+if($titre==''){
+   $titre="Centrale photovoltaique";
+}else{
+    $titre=$titre;
+}
+
+
 $dossier = $tab[0]['dossier'];
 $meteo = $tab[0]['meteo'];
 $type_clock = $tab[0]['type_clock'];
 
 $type_data_logger = $tab[0]['type_data_logger'];
 $logo_user = $tab[0]['logo_user'];
+$background_img_user=$tab[0]['background_img_user'];
+
+$CD = $tab[0]['CD'];
+$city_id = $tab[0]['city_id'];
+$logo_admin = $tab[0]['logo_admin'];
+$id_user = $tab[0]['id_user'];
+$solutions = $tab[0]['solutions'];
+
+
 
 
 if ($type_data_logger == 'logger1') {
@@ -166,6 +220,7 @@ function get_file_name()
             //echo $filename;
         } else {
             $file_exist_directory = 0;
+
         }
     }
 
@@ -259,14 +314,15 @@ $eac = $result[0][14];
 $eday = $result[0][15];
 $eTotal = $result[0][16];
 $cycleTime = $result[0][17];
+
 //check if the filename exists or not in the database
-$sql0 = "SELECT * FROM file_data WHERE filename like '$filename'";
+$sql0 = "SELECT * FROM `file_data` WHERE filename LIKE '$filename' AND fk_user = '$id_user'";
 $result0 = $conn->query($sql0);
 //
 if ($result0->num_rows > 0) {
 
     //echo "il y a un resultat";
-    $sql4 = "UPDATE  file_data  SET dateinsertion=now(), Upv1=$upv1,Upv2=$upv2,ipv1=$ipv1,ipv2=$ipv2,Uac=$uac,Iac=$iac,Status= $status,Error=$error,Temp=$temp,cos=$cos,fac=$fac,Pac=$pac,Qac=$qac,Eac=$eac,Eday=$eday,ETotal=$eTotal,CycleTime=$cycleTime where filename='$filename' ";
+    $sql4 = "UPDATE  file_data  SET dateinsertion=now(), Upv1=$upv1,Upv2=$upv2,ipv1=$ipv1,ipv2=$ipv2,Uac=$uac,Iac=$iac,Status= $status,Error=$error,Temp=$temp,cos=$cos,fac=$fac,Pac=$pac,Qac=$qac,Eac=$eac,Eday=$eday,ETotal=$eTotal,CycleTime=$cycleTime where filename='$filename' and fk_user='$id_user'";
     if ($conn->query($sql4) === TRUE) {
         //  echo "New record updated successfully";
     } else {
@@ -275,7 +331,7 @@ if ($result0->num_rows > 0) {
 } else {
     echo "0 results";
     //the row data must be stored in the database for each file
-    $sql = "INSERT INTO file_data (dateinsertion,filename,Upv1,Upv2,ipv1,ipv2,Uac,Iac,Status,Error,Temp,cos,fac,Pac,Qac,Eac,EDay,ETotal,CycleTime) VALUES (now(),'$filename','$upv1','$upv2','$ipv1','$ipv2','$uac','$iac','$status','$error','$temp','$cos','$fac','$pac','$qac','$eac','$eday','$eTotal','$cycleTime ')";
+    $sql = "INSERT INTO file_data (dateinsertion,filename,Upv1,Upv2,ipv1,ipv2,Uac,Iac,Status,Error,Temp,cos,fac,Pac,Qac,Eac,EDay,ETotal,CycleTime,fk_user) VALUES (now(),'$filename','$upv1','$upv2','$ipv1','$ipv2','$uac','$iac','$status','$error','$temp','$cos','$fac','$pac','$qac','$eac','$eday','$eTotal','$cycleTime ','$id_user')";
     if ($conn->query($sql) === TRUE) {
         //echo "New record created successfully";
     } else {
@@ -286,7 +342,7 @@ if ($result0->num_rows > 0) {
 
 //count the data eday stored in the database for monthly return
 
-$sql2 = "SELECT SUM(EDay) as sumeday FROM file_data";
+$sql2 = "SELECT SUM(EDay) as sumeday FROM file_data where fk_user='$id_user'";
 $result2 = $conn->query($sql2);
 
 if ($result2->num_rows > 0) {
@@ -301,7 +357,7 @@ if ($result2->num_rows > 0) {
 
 //count the Co2 formula
 
-$sql5 = "SELECT SUM(ETotal) as sumetotal FROM file_data";
+$sql5 = "SELECT SUM(ETotal) as sumetotal FROM file_data where fk_user='$id_user'";
 $result5 = $conn->query($sql5);
 
 if ($result5->num_rows > 0) {
@@ -317,7 +373,7 @@ if ($result5->num_rows > 0) {
 
 ?>
 
-<div class="col-lg-4" style="position: absolute;
+<div class="col-lg-4"  id="col_side" style="position: absolute;
     width: 25%;
     height: 114%;
     top: 0;
@@ -333,14 +389,14 @@ if ($result5->num_rows > 0) {
 </div>
 <div class="container-fluid" style="margin-top:2%;">
     <div class="row">
-        <div class="col">
+        <div class="col" id="div_dashboard2">
 
             <div class="col-lg-12 col-md-4">
-                <center><img src="upload/<?php echo $logo_user; ?>" alt=""></center>
+                <center><img src="upload/<?php echo $logo_user; ?>" alt="" id="logo_user"></center>
             </div>
             <div class="col-lg-12 col-md-4">
                 <center>
-             <article class="clock" style="margin-top: 30%; display: none" id="clock1">
+             <article class="clock" style="margin-top: 20%; display: none;" id="clock1">
                     <div class="hours-container">
                         <div class="hours" style="transform: rotateZ(648.5deg);"></div>
                     </div>
@@ -354,29 +410,30 @@ if ($result5->num_rows > 0) {
 
                 </article>
 
-                    <div class="clockd large" id="clock">
-                        <br><br><br>
+                    <div class="clockd large"  style="display:none;" id="clock">
+
                         <div class="time"></div>
                     </div>
+
                 </center>
 
             </div>
 
-            <div class="col-lg-12 col-md-4" style="margin-top: 15%;">
-                <center><img src="images/logo-light.png" alt=""></center>
+            <div class="col-lg-12 col-md-4" style="margin-top: 0%;">
+                <br><br><br>
+                <center><img src="upload_administrator/<?php echo $logo_admin; ?>" alt="" id="footer_logo"></center>
 
             </div>
 
         </div>
-
-        <div class="col-6">
+        <div class="col-6" id="div_dashboard">
 
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 style=" color: #f8b81d; font-family: 'DS-Digital', arial;"><?php echo $titre ?></h1>
                     </div>
-                    <div class="col-lg-12" style="margin-top: 8%;">
+                    <div class="col-lg-12" style="margin-top: 1%;">
                         <div>
                             <div id="divR1">
                                 <span id="spR1">Rendement journalier</span>
@@ -407,116 +464,67 @@ if ($result5->num_rows > 0) {
             </div>
         </div>
         <div class="col">
-            <div id="m-booked-bl-simple-week-vertical-7492">
-                <div class="booked-wzs-160-275 weather-customize"
-                     style="background-color:#rgba(255,255,255,0); width:200px;" id="width2 "><a target="_blank"
-                                                                                                 class="booked-wzs-top-160-275"
-                                                                                                 href="https://www.booked.net/"><img
-                                src="//s.bookcdn.com/images/letter/s5.gif" alt="booked.net"></a>
-                    <div class="booked-wzs-160-275_in">
-                        <div class="booked-wzs-160-275-data">
-                            <div class="booked-wzs-160-275-left-img wrz-06"></div>
-                            <div class="booked-wzs-160-275-right">
-                                <div class="booked-wzs-day-deck">
-                                    <div class="booked-wzs-day-val">
-                                        <div class="booked-wzs-day-number"><span class="plus">+</span>19</div>
-                                        <div class="booked-wzs-day-dergee">
-                                            <div class="booked-wzs-day-dergee-val">°</div>
-                                            <div class="booked-wzs-day-dergee-name">C</div>
-                                        </div>
-                                    </div>
-                                    <div class="booked-wzs-day">
-                                        <div class="booked-wzs-day-d"><span class="plus">+</span>19°</div>
-                                        <div class="booked-wzs-day-n"><span class="plus">+</span>18°</div>
-                                    </div>
-                                </div>
-                                <div class="booked-wzs-160-275-info">
-                                    <div class="booked-wzs-160-275-city smolest">Casablanca</div>
-                                    <div class="booked-wzs-160-275-date">Lundi, 04</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a target="_blank" href="https://hotelmix.fr/weather/casablanca-18374"
-                           class="booked-wzs-bottom-160-275">
-                            <table cellpadding="0" cellspacing="0" class="booked-wzs-table-160">
-                                <tbody>
-                                <tr>
-                                    <td class="week-day"><span class="week-day-txt">Mardi</span></td>
-                                    <td class="week-day-ico">
-                                        <div class="wrz-sml wrzs-18"></div>
-                                    </td>
-                                    <td class="week-day-val"><span class="plus">+</span>19°</td>
-                                    <td class="week-day-val"><span class="plus">+</span>15°</td>
-                                </tr>
-                                <tr>
-                                    <td class="week-day"><span class="week-day-txt">Mercredi</span></td>
-                                    <td class="week-day-ico">
-                                        <div class="wrz-sml wrzs-01"></div>
-                                    </td>
-                                    <td class="week-day-val"><span class="plus">+</span>20°</td>
-                                    <td class="week-day-val"><span class="plus">+</span>14°</td>
-                                </tr>
-                                <tr>
-                                    <td class="week-day"><span class="week-day-txt">Jeudi</span></td>
-                                    <td class="week-day-ico">
-                                        <div class="wrz-sml wrzs-03"></div>
-                                    </td>
-                                    <td class="week-day-val"><span class="plus">+</span>20°</td>
-                                    <td class="week-day-val"><span class="plus">+</span>13°</td>
-                                </tr>
-                                <tr>
-                                    <td class="week-day"><span class="week-day-txt">Vendredi</span></td>
-                                    <td class="week-day-ico">
-                                        <div class="wrz-sml wrzs-06"></div>
-                                    </td>
-                                    <td class="week-day-val"><span class="plus">+</span>18°</td>
-                                    <td class="week-day-val"><span class="plus">+</span>14°</td>
-                                </tr>
-                                <tr>
-                                    <td class="week-day"><span class="week-day-txt">Samedi</span></td>
-                                    <td class="week-day-ico">
-                                        <div class="wrz-sml wrzs-01"></div>
-                                    </td>
-                                    <td class="week-day-val"><span class="plus">+</span>18°</td>
-                                    <td class="week-day-val"><span class="plus">+</span>12°</td>
-                                </tr>
-                                <tr>
-                                    <td class="week-day"><span class="week-day-txt">Dimanche</span></td>
-                                    <td class="week-day-ico">
-                                        <div class="wrz-sml wrzs-01"></div>
-                                    </td>
-                                    <td class="week-day-val"><span class="plus">+</span>19°</td>
-                                    <td class="week-day-val"><span class="plus">+</span>12°</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <div class="booked-wzs-center"><span
-                                        class="booked-wzs-bottom-l">Prévisions sur 7 jours</span></div>
-                        </a></div>
-                </div>
-            </div>
+            <div id="m-booked-bl-simple-week-vertical-7492" style="display:none; position: absolute;"></div>
         </div>
-
 
     </div>
 
 </div>
 
 <?php
-/*
 
+if($background_img_user== ''){?>
+   <script>document.getElementById('background_image').style.backgroundImage= "url('../<?= $directory ?>/images/solar.jpg')";</script>
+<?php
+}else{
+?> <script>document.getElementById('background_image').style.backgroundImage= "url('../<?= $directory ?>/upload_background/<?= $background_img_user;  ?>')";</script><?php }?>
+<?php
+if ($meteo == 'weather1'){
+?><script>document.getElementById('m-booked-bl-simple-week-vertical-7492').style.display = "block";</script>
+<?php
+}else{?>
+  <script>document.getElementById('div_dashboard').className = "col-8";
+  document.getElementById('div_dashboard2').className = "col-3";
+
+  </script>
+<?php
+}
 if($type_clock== 'clock1'){
 //echo "montre Analogique active";
-*/?><!--<script>document.getElementById('clock1').style.display = "block";</script><?php
-/*}else {
+?><script>
+        document.getElementById('clock1').style.display = "block";</script>
+    <?php
+}else {
   //echo "montre Digitale active";
-   */?><script>document.getElementById('clock2').style.display = "block";</script>--><?php
-/*} */?>
+   ?><script>document.getElementById('clock').style.display = "block";</script><?php
+} ?>
+
+
+<!--<script>
+
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            document.body.style.backgroundColor = "yellow";
+        } else {
+            document.body.style.backgroundColor = "pink";
+        }
+    }
+
+    var x = window.matchMedia("(max-width: 700px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+
+
+
+
+
+
+</script>-->
 <footer class="ftco-footer ftco-bg-dark  fixed-bottom">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <p> Copyright © <!--?php echo date('Y'); ?--> All rights reserved designed by SolarPlay® </p>
+                <p id="copyright"> Copyright © <!--?php echo date('Y'); ?--> All rights reserved designed by SolarPlay® </p>
             </div>
         </div>
     </div>
@@ -536,12 +544,12 @@ if($type_clock== 'clock1'){
 <script src="js/aos.js"></script>
 <script src="js/jquery.animateNumber.min.js"></script>
 <script src="js/bootstrap-datepicker.js"></script>
-<script src="../adiwatt/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="../adiwatt/vendor/jquery-validation/dist/additional-methods.min.js"></script>
-<script src="../adiwatt/vendor/jquery-steps/jquery.steps.min.js"></script>
-<script src="../adiwatt/js/main2.js"></script>
-<script src="../adiwatt/js/plugins/bootstrap-notify.js"></script>
-<script src="../adiwatt/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
+<script src="../<?= $directory ?>/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="../<?= $directory ?>/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+<script src="../<?= $directory ?>/vendor/jquery-steps/jquery.steps.min.js"></script>
+<script src="../<?= $directory ?>/js/main2.js"></script>
+<script src="../<?= $directory ?>/js/plugins/bootstrap-notify.js"></script>
+<script src="../<?= $directory ?>/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
 <script src="js/scrollax.min.js"></script>
 
 
@@ -599,7 +607,6 @@ if($type_clock== 'clock1'){
 
 
 </script>
-<!-- weather widget start -->
 
 <script type="text/javascript">
     var css_file = document.createElement("link");
@@ -623,66 +630,7 @@ if($type_clock== 'clock1'){
         }
     } </script>
 <script type="text/javascript" charset="UTF-8"
-        src="https://widgets.booked.net/weather/info?action=get_weather_info&amp;ver=6&amp;cityID=18374&amp;type=4&amp;scode=124&amp;ltid=3457&amp;domid=581&amp;anc_id=55880&amp;cmetric=1&amp;wlangID=3&amp;color=137AE9&amp;wwidth=160&amp;header_color=ffffff&amp;text_color=333333&amp;link_color=08488D&amp;border_form=1&amp;footer_color=ffffff&amp;footer_text_color=333333&amp;transparent=0"></script>
-<!-- weather widget end -->
-<script type="text/javascript"> var css_file = document.createElement("link");
-    css_file.setAttribute("rel", "stylesheet");
-    css_file.setAttribute("type", "text/css");
-    css_file.setAttribute("href", 'https://s.bookcdn.com/css/w/booked-wzs-widget-160x275.css?v=0.0.1');
-    document.getElementsByTagName("head")[0].appendChild(css_file);
-
-    function setWidgetData(data) {
-        if (typeof (data) != 'undefined' && data.results.length > 0) {
-            for (var i = 0; i < data.results.length; ++i) {
-                var objMainBlock = document.getElementById('m-booked-bl-simple-week-vertical-7492');
-                if (objMainBlock !== null) {
-                    var copyBlock = document.getElementById('m-bookew-weather-copy-' + data.results[i].widget_type);
-                    objMainBlock.innerHTML = data.results[i].html_code;
-                    if (copyBlock !== null) objMainBlock.appendChild(copyBlock);
-                }
-            }
-        } else {
-            alert('data=undefined||data.results is empty');
-        }
-    } </script>
-<script type="text/javascript" charset="UTF-8"
-        src="https://widgets.booked.net/weather/info?action=get_weather_info&amp;ver=6&amp;cityID=18374&amp;type=4&amp;scode=124&amp;ltid=3457&amp;domid=581&amp;anc_id=55880&amp;cmetric=1&amp;wlangID=3&amp;color=rgba(255,255,255,0)&amp;wwidth=200&amp;header_color=ffffff&amp;text_color=333333&amp;link_color=08488D&amp;border_form=1&amp;footer_color=ffffff&amp;footer_text_color=333333&amp;transparent=0"></script>
-<script>
-    if (navigator.geolocation) {
-        // Request the current position
-        // If successful, call getPosSuccess; On error, call getPosErr
-        navigator.geolocation.getCurrentPosition(getPosSuccess, getPosErr);
-    } else {
-        alert('geolocation not available?! What year is this?');
-        // IP address or prompt for city?
-    }
-
-    // getCurrentPosition: Successful return
-    function getPosSuccess(pos) {
-        // Get the coordinates and accuracy properties from the returned object
-        var geoLat = pos.coords.latitude.toFixed(5);
-        var geoLng = pos.coords.longitude.toFixed(5);
-        var geoAcc = pos.coords.accuracy.toFixed(1);
-    }
-
-    // getCurrentPosition: Error returned
-    function getPosErr(err) {
-        switch (err.code) {
-            case err.PERMISSION_DENIED:
-                //alert("User denied the request for Geolocation.");
-                break;
-            case err.POSITION_UNAVAILABLE:
-                alert("Location information is unavailable.");
-                break;
-            case err.TIMEOUT:
-                alert("The request to get user location timed out.");
-                break;
-            default:
-                alert("An unknown error occurred.");
-        }
-    }
-</script>
-
+        src="https://widgets.booked.net/weather/info?action=get_weather_info&ver=6&cityID=<?= $city_id  ?>&type=4&scode=124&ltid=3457&domid=581&anc_id=55880&cmetric=1&wlangID=3&color=rgba(255,255,255,0)&wwidth=310&header_color=ffffff&text_color=333333&link_color=08488D&border_form=1&footer_color=ffffff&footer_text_color=333333&transparent=0"></script>
 <!-- weather widget start -->
 <script type="text/javascript"> $(document).ready(function () {
         $("div#clock").simpleClock(1);
@@ -758,3 +706,12 @@ if($type_clock== 'clock1'){
 
 </body>
 </html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        demo.showNotificationback('bottom','right');
+
+    })
+
+</script>

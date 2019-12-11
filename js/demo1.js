@@ -175,6 +175,27 @@ demo = {
             }
         });
     },
+
+
+    showNotificationback: function(from, align) {
+
+
+        $.notify({
+            url:"authentification.php",
+            icon: "nc-icon nc-stre-left",
+
+            message: "Cliquer ici pour retourner!</b>"
+
+        }, {
+            type: 'success',
+            timer: '',
+            placement: {
+                from: from,
+                align: align
+            }
+        });
+    },
+
     showNotificationSMA: function(from, align) {
         color = Math.floor((Math.random() * 4) + 1);
 
@@ -216,7 +237,7 @@ demo = {
         $.notify({
 
 
-            message: "Oups !Une erreur est survenue lors lors de la modification!</b>"
+            message: "Oups !Une erreur est survenue lors de la modification!</b>"
 
         }, {
             type: 'danger',

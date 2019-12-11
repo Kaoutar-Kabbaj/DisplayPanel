@@ -29,12 +29,13 @@
 <body>
 
 <div class="container-login100"  style="background-image: url('images/bg-01.jpg');">
-    <div class="wrapper wrapper--w680">
+    <div class="wrapper wrapper--w680" style="
+    width: 43%;">
         <div class="card card-4">
-            <div class="card-body">
+            <div class="card-body" style="padding: 26px 19px;">
                 <h2 style="font-weight: bold;" class="title">
-                    Inscription</h2> <a><img style="width: 48%;
-    margin-left: 55%;
+                    Inscription</h2> <a><img style="width: 35%;
+    margin-left: 63%;
     margin-bottom: 5%;
     margin-top: -45%;" src="images/Logo_solar_play.png" alt=""
                                                           ></a>
@@ -92,8 +93,8 @@
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">Code Postal</label>
-                                <input type="number" class="input--style-4" placeholder="ZIP Code" name="CD">
+                                <label class="label">Ville</label>
+                                <input type="text" class="input--style-4" placeholder="" name="CD">
                             </div>
                         </div>
 

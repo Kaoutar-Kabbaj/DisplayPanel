@@ -1,3 +1,12 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 19, 2019 at 11:21 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.1.32
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -13,8 +22,24 @@ SET time_zone = "+00:00";
 -- Database: `solarcit_file_data`
 --
 
-CREATE DATABASE solarcit_file_data;
-USE solarcit_file_data;
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(11) NOT NULL,
+  `logo_admin` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `logo_admin`) VALUES
+(1, 'total'),
+(2, 'solarplay');
 
 -- --------------------------------------------------------
 
@@ -42,47 +67,124 @@ CREATE TABLE `file_data` (
   `Eac` float NOT NULL,
   `EDay` float NOT NULL,
   `ETotal` float NOT NULL,
-  `CycleTime` float NOT NULL
+  `CycleTime` float NOT NULL,
+  `fk_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `file_data`
 --
 
-INSERT INTO `file_data` (`id_filedata`, `dateinsertion`, `filename`, `Upv1`, `Upv2`, `Ipv1`, `Ipv2`, `Uac`, `Iac`, `Status`, `Error`, `Temp`, `cos`, `fac`, `Pac`, `Qac`, `Eac`, `EDay`, `ETotal`, `CycleTime`) VALUES
-(56, '2019-10-28 17:19:59', 'data/min191028.csv', 108.6, 0, 5.84, 0, 228.4, 2.652, 512, 0, 30, 1, 50.04, 0.606, -0.009, 0.05, 0.25, 100.96, 5),
-(57, '2019-10-21 18:40:00', 'data/min191021.csv', 0, 0, 0, 0, 0, 0, 40960, 0, 29.3, 0, 0, 0, 0, 0, 0.38, 89.21, 5),
-(58, '2019-10-22 12:05:00', 'data/min191022.csv', 291.4, 0, 0.23, 0, 220.8, 0.247, 512, 0, 29.3, 0.994, 50.01, 0.012, 0, 0, 1.08, 90.29, 5),
-(59, '2019-10-23 10:05:00', 'data/min191023.csv', 327.2, 0, 0.23, 0, 224.6, 0.609, 512, 0, 26.5, 1, 49.96, 0.129, 0.002, 0.01, 0.11, 90.67, 5),
-(60, '2019-10-24 09:15:00', 'data/min191024.csv', 308.4, 0, 0.23, 0, 225.6, 0.438, 512, 0, 25.4, 0.997, 50.03, 0.079, 0, 0, 0.05, 91.7, 5),
-(61, '2019-10-25 18:40:00', 'data/min191025.csv', 0, 0, 0, 0, 0, 0, 40960, 0, 28.8, 0, 0, 0, 0, 0, 2.48, 96.46, 5),
-(62, '2019-10-26 00:00:00', 'data/min191026.csv', 0, 0, 0, 0, 0, 0, 40960, 0, 30.3, 0, 0, 0, 0, 0, 2.09, 98.55, 5),
-(63, '2019-10-27 18:30:00', 'data/min191027.csv', 0, 0, 0, 0, 0, 0, 40960, 0, 30.03, 0, 0, 0, 0, 0, 2.16, 100.71, 5),
-(64, '2019-10-29 16:50:10', 'data/min191029.csv', 308, 0, 0.24, 0, 232.6, 0.416, 512, 0, 28.7, 1, 50.01, 0.076, -0.001, 0.01, 0.05, 102.75, 5),
-(65, '2019-10-30 16:47:33', 'data/min191030.csv', 95.8, 0, 0.95, 0, 227.5, 0.4, 512, 0, 29.5, 1, 50.01, 0.068, -0.003, 0.02, 0.19, 104.89, 5),
-(66, '2019-10-31 16:58:49', 'data/min191031.csv', 254.1, 0, 0.2, 0, 226, 0.241, 512, 0, 29.4, 0.998, 49.97, 0.027, 0, 0.01, 1.82, 108.42, 5),
-(67, '2019-11-01 13:38:37', 'data/min191101.csv', 137.7, 0, 1.53, 0, 218.5, 0.839, 512, 0, 30.7, 1, 49.97, 0.173, 0, 0.03, 0.35, 108.79, 5),
-(68, '2019-11-03 15:45:47', 'data/min191103.csv', 0, 0, 0, 0, 0, 0, 40960, 0, 29.3, 0, 0, 0, 0, 0, 0.38, 89.21, 5);
+INSERT INTO `file_data` (`id_filedata`, `dateinsertion`, `filename`, `Upv1`, `Upv2`, `Ipv1`, `Ipv2`, `Uac`, `Iac`, `Status`, `Error`, `Temp`, `cos`, `fac`, `Pac`, `Qac`, `Eac`, `EDay`, `ETotal`, `CycleTime`, `fk_user`) VALUES
+(87, '2019-11-18 17:24:27', 'data/min191118.csv', 224.3, 0, 1.36, 0, 218, 1.349, 512, 0, 25.7, 1, 50.01, 0.29, 0.002, 0.03, 1, 133.38, 5, 13),
+(88, '2019-11-18 17:34:15', 'data/min191118.csv', 224.3, 0, 1.36, 0, 218, 1.349, 512, 0, 25.7, 1, 50.01, 0.29, 0.002, 0.03, 1, 133.38, 5, 11),
+(89, '2019-11-18 16:53:17', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11),
+(90, '2019-11-19 11:19:42', 'data/min191119.csv', 245.6, 0, 0.62, 0, 218.8, 0.656, 512, 0, 22.1, 1, 49.98, 0.135, 0.001, 0, 0.04, 133.9, 5, 11),
+(91, '2019-11-19 09:36:37', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15),
+(92, '2019-11-19 11:18:41', 'data/min191119.csv', 245.6, 0, 0.62, 0, 218.8, 0.656, 512, 0, 22.1, 1, 49.98, 0.135, 0.001, 0, 0.04, 133.9, 5, 15),
+(93, '2019-11-19 11:18:41', 'data/min191119.csv', 245.6, 0, 0.62, 0, 218.8, 0.656, 512, 0, 22.1, 1, 49.98, 0.135, 0.001, 0, 0.04, 133.9, 5, 13);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` int(11) NOT NULL,
+  `type_user` varchar(25) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `D_area` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `num_tel` varchar(25) NOT NULL,
+  `solutions` varchar(25) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `adresse` varchar(255) NOT NULL,
+  `CD` varchar(25) NOT NULL,
+  `city_id` int(11) NOT NULL,
+  `logo_user` varchar(255) NOT NULL,
+  `background_img_user` varchar(255) NOT NULL,
+  `titre` varchar(255) NOT NULL,
+  `meteo` varchar(25) NOT NULL,
+  `dossier` varchar(255) NOT NULL,
+  `type_clock` varchar(25) NOT NULL,
+  `type_data_logger` varchar(25) NOT NULL,
+  `fk_admin` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `type_user`, `nom`, `D_area`, `email`, `num_tel`, `solutions`, `username`, `password`, `adresse`, `CD`, `city_id`, `logo_user`, `background_img_user`, `titre`, `meteo`, `dossier`, `type_clock`, `type_data_logger`, `fk_admin`) VALUES
+(11, 'user', 'atakadaw', 'commerce', 'atacadaw@gmail.com', '0522278965', 'myoption1', 'atakadaw', '123456789', 'Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09nnn', 'casablanca', 18374, 'atakadaw.png', '', 'Le batiment utilise de l\'energie solaire 10', 'weather1', 'data', 'clock2', 'logger1', 1),
+(12, 'admin', 'total', 'commerce', 'total@gmail.com', '0698745632', 'myoption1', 'total', '123456789', 'Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09nnn', 'casablanca', 0, 'total.png', '', '', '', '', '', '', 1),
+(13, 'user', 'adiwatta', 'energie', 'adiwat@gmail.com', '0522278965', 'myoption1', 'adiwatt', '123456789', 'Blda Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09', 'paris', 0, 'adiwatt-logo.png', '', 'Le batiment utilise de l\'energie solaire ', 'weather2', 'data', 'clock1', 'logger2', 1),
+(15, 'user', 'emirates', 'energie', 'emirates@gmail.com', '0522278965', 'myoption1', 'emirates', '123456789', 'Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09nnn', 'casablanca', 0, '', '', 'Le batiment utilise de l\'energie solaire ', 'weather1', 'data', 'clock1', 'logger1', 1),
+(16, 'user', 'test', 'solaire', 'test@gmail.com', '0522278965', 'myoption2', 'test', '123456789', 'Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09nnn', '', 0, '', '', '', '', '', '', '', 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
 -- Indexes for table `file_data`
 --
 ALTER TABLE `file_data`
-  ADD PRIMARY KEY (`id_filedata`);
+  ADD PRIMARY KEY (`id_filedata`),
+  ADD KEY `fk_user` (`fk_user`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`),
+  ADD KEY `fk_admin` (`fk_admin`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `file_data`
 --
 ALTER TABLE `file_data`
-  MODIFY `id_filedata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id_filedata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `file_data`
+--
+ALTER TABLE `file_data`
+  ADD CONSTRAINT `file_data_ibfk_1` FOREIGN KEY (`fk_user`) REFERENCES `user` (`id_user`);
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`fk_admin`) REFERENCES `admin` (`id_admin`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

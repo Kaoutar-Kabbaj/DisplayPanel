@@ -1,3 +1,29 @@
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+
+  div#background_img_user {
+
+    margin-top: -76%;
+  }
+
+  #btnup {
+    font-size: 34%;
+    width: 101%;
+  }
+
+  #fakebtn {
+    margin-left: -14%;
+  }
+
+  h1#imgupload {
+    font-size: 3em;
+  !important;
+    padding-right: 12%;
+  !important;
+  }
+
+}
+
 /* @extend display-flex; */
 display-flex, .select-icon, .select-icon i, .steps ul, .actions ul li a, .form-row, .select-list li, .form-radio-group {
   display: flex;

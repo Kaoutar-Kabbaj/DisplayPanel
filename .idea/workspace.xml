@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e2bb40c-7787-4255-8111-ca8140fdc179" name="Default Changelist" comment="" />
+    <list default="true" id="5e2bb40c-7787-4255-8111-ca8140fdc179" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/administrator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ajouter_client.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/auth.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/style_css_panneau_3.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard_installateur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/delete_clients.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/espace2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/espace3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/forgot.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/includes/fusioncharts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/installateur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/canvasjs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage_customers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/panneau3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/register_installateur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/traitement_installateur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/traitement_solution.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/update_clients.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/update_espace.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upload_administrator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upload_client.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upload_installateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BS3/icons.html" beforeDir="false" afterPath="$PROJECT_DIR$/BS3/icons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BS3/upgrade.html" beforeDir="false" afterPath="$PROJECT_DIR$/BS3/upgrade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentification.php" beforeDir="false" afterPath="$PROJECT_DIR$/authentification.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection/db_connection_file.php" beforeDir="false" afterPath="$PROJECT_DIR$/connection/db_connection_file.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/demo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/light-bootstrap-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/light-bootstrap-dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/util.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/util.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/solarcit_file_data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/solarcit_file_data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/tutorial-components.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/tutorial-components.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/espace.php" beforeDir="false" afterPath="$PROJECT_DIR$/espace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/upgrade.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/upgrade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Your-Logo-here.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Your-Logo-here.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/demo1.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/demo1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modifier_profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/modifier_profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/panneau.php" beforeDir="false" afterPath="$PROJECT_DIR$/panneau.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/traitement.php" beforeDir="false" afterPath="$PROJECT_DIR$/traitement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/update_para.php" beforeDir="false" afterPath="$PROJECT_DIR$/update_para.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload/Your-Logo-here.png" beforeDir="false" afterPath="$PROJECT_DIR$/upload/Your-Logo-here.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload_background.php" beforeDir="false" afterPath="$PROJECT_DIR$/upload_background.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/user.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,25 +65,33 @@
       <executable />
     </execution>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="adiwatt" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1SWg7XWBAL0Hf7r8rpso9I9iIzs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/jquery" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rh" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\adiwatt\Kendo" />
+      <recent name="C:\xampp\htdocs\adiwatt\css" />
+      <recent name="C:\xampp\htdocs\adiwatt\css\" />
+      <recent name="C:\xampp\htdocs\adiwatt\css\css" />
+      <recent name="C:\xampp\htdocs\adiwatt\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\adiwatt\vendor\jquery" />
       <recent name="C:\xampp\htdocs\adiwatt\vendor" />
       <recent name="C:\xampp\htdocs\adiwatt\css" />
       <recent name="C:\xampp\htdocs\adiwatt\fonts" />
       <recent name="C:\xampp\htdocs\adiwatt\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\adiwatt\css" />
-      <recent name="C:\xampp\htdocs\adiwatt\css\" />
-      <recent name="C:\xampp\htdocs\adiwatt\css\css" />
-      <recent name="C:\xampp\htdocs\adiwatt\js" />
-      <recent name="C:\xampp\htdocs\adiwatt\vendor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -61,43 +121,69 @@
       <workItem from="1571824248696" duration="77562000" />
       <workItem from="1572535307491" duration="1541000" />
       <workItem from="1572600036687" duration="21222000" />
+      <workItem from="1573901852059" duration="125187000" />
+      <workItem from="1574411759504" duration="72253000" />
+      <workItem from="1574712319065" duration="1891000" />
+      <workItem from="1574757416557" duration="21084000" />
+      <workItem from="1574864950326" duration="3103000" />
+      <workItem from="1574933344481" duration="130938000" />
+      <workItem from="1575881319478" duration="29426000" />
+      <workItem from="1575993666735" duration="1342000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/espace.php</url>
-          <line>304</line>
+          <line>199</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/panneau.php</url>
-          <line>218</line>
+          <line>273</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/espace3.php</url>
+          <line>80</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/register_installateur.php</url>
+          <line>106</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/manage_customers.php</url>
+          <line>310</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/demo1.js</url>
           <line>141</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/panneau.php</url>
-          <line>177</line>
-          <properties>
-            <option name="className" value="" />
-            <option name="methodName" value="\find_indice_row" />
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/panneau.php</url>
-          <line>137</line>
+          <line>191</line>
           <properties>
             <option name="className" value="" />
             <option name="methodName" value="\get_file_name" />

@@ -11,9 +11,23 @@
 =========================================================
 
  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.*/
- 
-/*      light colors         */
 
+/*      light colors         */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+    img#logo_light{
+        margin-top: 180%;
+    }
+
+}
+
+/*Mobile Styles */
+@media only screen and (max-width: 400px) {
+    img#logo_light{
+        margin-top: 96%;
+
+    }
+}
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -801,11 +815,10 @@ body>.navbar-collapse[data-color="purple"]:after {
     border-top: 16px solid transparent;
     right: -15px;
 }
-
 .modal.show .modal-dialog {
-    -webkit-transform: translate(0, 30%);
+    /* -webkit-transform: translate(0, 30%); */
     -o-transform: translate(0, 30%);
-    transform: translate(0, 30%);
+    /* transform: translate(0, 30%); */
 }
 
 .modal.modal-mini .modal-dialog {
@@ -4064,7 +4077,7 @@ Copyright (c) 2015 Daniel Eden
         display: inline-block !important;
     }
     .nav-mobile-menu .nav-item .nav-link .no-icon {
-        padding-left: 50px;
+        /* padding-left: 8px; */
     }
     .main-panel {
         width: 100%;
