@@ -10,14 +10,6 @@ Par exemple 200121 le 20 représente l’année 2020, le 01 c’est le mois janv
 Le répertoire data est un répertoire qui contient les fichiers transmis par le datalogger.
 
 
-Comme toute autre application le point de départ de l’application est une simple page d’authentification, celle-ci permet à l'utilisateur d’accéder uniquement aux données dont il a besoin.
-
-Le client s’enregistre en cliquant sur Enregistrez-vous simplement**; ici si il n’est pas encore enregistré.
-Effectivement, le client choisit entre 3 types de solutions, chaque solution convient à un dashboard donné personnalisé par son installateur.
-
-Une fois enregistré un email automatique est envoyé au technicien qui quant à lui copiera le chemin du répertoire dans le path du datalogger.
-
-
 Effectivement, Il existe 3 types de dashboard : 
 - Dashboard 1 :
 ![dash1](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/panneau1.PNG)</br>
