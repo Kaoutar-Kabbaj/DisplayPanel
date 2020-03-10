@@ -9,7 +9,7 @@ Avant de déployer l’application sur le serveur, veuillez insérer un fichier 
 Par exemple 200121 le 20 représente l’année 2020, le 01 c’est le mois janvier et le 21 c’est le jour 21 du mois .
 Le répertoire data est un répertoire qui contient les fichiers transmis par le datalogger.
 
-# Interface Client 
+
 Comme toute autre application le point de départ de l’application est une simple page d’authentification, celle-ci permet à l'utilisateur d’accéder uniquement aux données dont il a besoin.
 
 ![authentification](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/auth.PNG) </br>
@@ -32,9 +32,6 @@ Effectivement, Il existe 3 types de dashboard :
 - Dashboard 3 :
 ![dash3](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/panneau3.PNG)</br>
 
-#Interface Administrateur
-L’interface administrateur se compose de deux parties:
-* 	Gestion Profil administrateur 
-* 	Gestion des Clients et Installateurs
+
 
 
