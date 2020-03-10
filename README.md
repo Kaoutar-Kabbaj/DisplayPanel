@@ -32,5 +32,9 @@ Effectivement, Il existe 3 types de dashboard :
 - Dashboard 3 :
 ![dash3](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/panneau3.PNG)</br>
 
+#Interface Administrateur
+L’interface administrateur se compose de deux parties:
+* 	Gestion Profil administrateur 
+* 	Gestion des Clients et Installateurs
 
 
