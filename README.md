@@ -10,7 +10,7 @@ Par exemple 200121 le 20 représente l’année 2020, le 01 c’est le mois janv
 Le répertoire data est un répertoire qui contient les fichiers transmis par le datalogger.
 
 
-Effectivement, Il existe 3 types de dashboard : 
+Effectivement, Il existe 3 types de dashboard personnalisable par le client: 
 - Dashboard 1 :
 ![dash1](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/panneau1.PNG)</br>
 - Dashboard 2 :
