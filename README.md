@@ -17,8 +17,6 @@ Effectivement, le client choisit entre 3 types de solutions, chaque solution con
 
 Une fois enregistré un email automatique est envoyé au technicien qui quant à lui copiera le chemin du répertoire dans le path du datalogger comme le montre la figure ci-dessous.
 
-![email_notif](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/email_notif.jpg)</br>
-Une fois le client est logé une erreur s’affichera sur son écran, celle-ci ne disparaitra qu’après avoir affecté le client à un installateur donné.
 
 Effectivement, Il existe 3 types de dashboard : 
 - Dashboard 1 :
