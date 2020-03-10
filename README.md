@@ -1,5 +1,5 @@
-# DisplayPannel
-L’application DisplayPannel offre un mode d’affichage innovant des données de rendement des installations photovoltaïques.  
+# DisplayPanel
+L’application DisplayPanel offre un mode d’affichage innovant des données de rendement des installations photovoltaïques.  
 L’installateur est libre de paramétrer la configuration de l’écran de son client comme il le souhaite. 
 Afficher ou pas la météo, choisir le type de son horloge (Digitale ou numérique), choisir l’image de son arrière-plan ou bien modifier la couleur de ses graphes. De plus les titres des dashboards des clients sont personnalisables par l’installateur afin de répondre aux besoins spécifiques du client.  
 Le client a le choix entre une multitude de dashboards ou de solutions. L’utilisation est un véritable jeu d’enfant : le système est piloté via l’application solardisplay.
