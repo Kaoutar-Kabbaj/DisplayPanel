@@ -28,7 +28,7 @@ Effectivement, Il existe 3 types de dashboard :
 - Dashboard 1 :
 ![dash1](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/panneau1.PNG)</br>
 - Dashboard 2 :
-![dash2](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/panneau2.PNG)</br>
+![dash2](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/panneau2.png)</br>
 - Dashboard 3 :
 ![dash3](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/panneau3.PNG)</br>
 
