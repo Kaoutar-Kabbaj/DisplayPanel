@@ -15,7 +15,7 @@ Comme toute autre application le point de départ de l’application est une sim
 Le client s’enregistre en cliquant sur Enregistrez-vous simplement**; ici si il n’est pas encore enregistré.
 Effectivement, le client choisit entre 3 types de solutions, chaque solution convient à un dashboard donné personnalisé par son installateur.
 
-Une fois enregistré un email automatique est envoyé au technicien qui quant à lui copiera le chemin du répertoire dans le path du datalogger comme le montre la figure ci-dessous.
+Une fois enregistré un email automatique est envoyé au technicien qui quant à lui copiera le chemin du répertoire dans le path du datalogger.
 
 
 Effectivement, Il existe 3 types de dashboard : 
