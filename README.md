@@ -12,11 +12,7 @@ Le répertoire data est un répertoire qui contient les fichiers transmis par le
 
 Comme toute autre application le point de départ de l’application est une simple page d’authentification, celle-ci permet à l'utilisateur d’accéder uniquement aux données dont il a besoin.
 
-![authentification](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/auth.PNG) </br>
 Le client s’enregistre en cliquant sur Enregistrez-vous simplement**; ici si il n’est pas encore enregistré.
-
-![register](https://github.com/Kaoutar-Kabbaj/DisplayPannel/blob/master/images/inscription.png)</br>
-
 Effectivement, le client choisit entre 3 types de solutions, chaque solution convient à un dashboard donné personnalisé par son installateur.
 
 Une fois enregistré un email automatique est envoyé au technicien qui quant à lui copiera le chemin du répertoire dans le path du datalogger comme le montre la figure ci-dessous.
